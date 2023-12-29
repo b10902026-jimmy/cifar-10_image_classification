@@ -21,13 +21,13 @@ def main():
     early_stop = EarlyStopping(patience=10)
 
     # Train the model
-    history = model.fit(datagen.flow(x_train, y_train, batch_size=32), 
+    history = model.fit(datagen.flow(x_train, y_train, batch_size=128), 
                         epochs=50, 
                         validation_data=(x_test, y_test), 
                         callbacks=[checkpoint, early_stop])
     
     # Evaluate the model
-    test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
+    test_loss, test_acc = model.evaluate(x_test, y_test)
     print(f"Test accuracy: {test_acc}, Test loss: {test_loss}")
 
     # Plot training & validation accuracy values
