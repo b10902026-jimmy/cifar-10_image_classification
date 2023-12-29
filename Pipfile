@@ -4,8 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-tensorflow = "*"
-keras = "*"
+tensorflow = "==2.9.0"
 matplotlib = "*"
 scipy = "*"
 
@@ -13,5 +12,5 @@ scipy = "*"
 ipykernel = "*"
 
 [requires]
-python_version = "3.8"
-python_full_version = "3.8.10"
+python_version = "3.9"
+python_full_version = "3.9.18"
