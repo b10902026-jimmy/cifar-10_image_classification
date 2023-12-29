@@ -25,28 +25,32 @@ def main():
                         epochs=50, 
                         validation_data=(x_test, y_test), 
                         callbacks=[checkpoint, early_stop])
-    
-    # Evaluate the model
-    test_loss, test_acc = model.evaluate(x_test, y_test)
-    print(f"Test accuracy: {test_acc}, Test loss: {test_loss}")
 
-    # Plot training & validation accuracy values
-    plt.plot(history.history['accuracy'])
-    plt.plot(history.history['val_accuracy'])
-    plt.title('Model accuracy')
-    plt.ylabel('Accuracy')
-    plt.xlabel('Epoch')
-    plt.legend(['Train', 'Test'], loc='upper left')
-    plt.show()
+    # Check if history object is created
+    if history is not None:
+        # Evaluate the model
+        test_loss, test_acc = model.evaluate(x_test, y_test)
+        print(f"Test accuracy: {test_acc}, Test loss: {test_loss}")
 
-    # Plot training & validation loss values
-    plt.plot(history.history['loss'])
-    plt.plot(history.history['val_loss'])
-    plt.title('Model loss')
-    plt.ylabel('Loss')
-    plt.xlabel('Epoch')
-    plt.legend(['Train', 'Test'], loc='upper left')
-    plt.show()
+        # Plot training & validation accuracy values
+        plt.plot(history.history['accuracy'])
+        plt.plot(history.history['val_accuracy'])
+        plt.title('Model accuracy')
+        plt.ylabel('Accuracy')
+        plt.xlabel('Epoch')
+        plt.legend(['Train', 'Test'], loc='upper left')
+        plt.show()
+
+        # Plot training & validation loss values
+        plt.plot(history.history['loss'])
+        plt.plot(history.history['val_loss'])
+        plt.title('Model loss')
+        plt.ylabel('Loss')
+        plt.xlabel('Epoch')
+        plt.legend(['Train', 'Test'], loc='upper left')
+        plt.show()
+    else:
+        print("Training did not complete successfully. No history object was created.")
 
 if __name__ == "__main__":
     main()
