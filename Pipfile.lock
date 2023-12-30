@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "859bcb54f329ccf912ffd652fb25eb88c18fceb2e13e328aec4b9b3fa5f6dac1"
+            "sha256": "48528de76ad0de9341b3833c3044ff87b5d0486e6a5cc47b6f355b5f22a4a2ec"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -712,6 +712,89 @@
             "markers": "python_version >= '3.9'",
             "version": "==1.26.2"
         },
+        "nvidia-cublas-cu12": {
+            "hashes": [
+                "sha256:b65d8b6e198056e4fafe998ae4e819e0be8e25554a724560a4cfd0602c5aa65b",
+                "sha256:f448d8db463f9a2c7dd9a1e607c0961d3e95f825b86839c5882f7d073d406df0"
+            ],
+            "version": "==12.2.5.6"
+        },
+        "nvidia-cuda-cupti-cu12": {
+            "hashes": [
+                "sha256:60d968f5ce037258ebb3a94b2a1fde4f3dc400c3d6e8531ec3af08b82d7d29dd",
+                "sha256:ce68d1009dd14215e38ed49643d31374c71d6fea381181cb0b9da7f19dfd1624"
+            ],
+            "version": "==12.2.142"
+        },
+        "nvidia-cuda-nvcc-cu12": {
+            "hashes": [
+                "sha256:af4bc842b603fe6d6a93ae779dd4d73bfac95c8aa08d3bbc285eaa7ec7fb854a",
+                "sha256:c6ff4ae7a636eb6cab7621191e19ac3779690686bbcf52c04d8b1ca2944e1e27"
+            ],
+            "version": "==12.2.140"
+        },
+        "nvidia-cuda-nvrtc-cu12": {
+            "hashes": [
+                "sha256:757cae04ac6de8d87ae44ecde8b02cf08b31a7b5b539eb982825d7808b2b946d",
+                "sha256:b1cdcae6443cb7cdcfb5d1bf51896a148c9f82f9e65b27db9ab095eaed689aa7"
+            ],
+            "version": "==12.2.140"
+        },
+        "nvidia-cuda-runtime-cu12": {
+            "hashes": [
+                "sha256:3f35d098455efb847acdc5e6345b2943c6d570296d1b265adb97a500ce3ab941",
+                "sha256:acb9cb7e44594a3512533497ea790d9f0b0e399abcc888584c157d1ffa080e41"
+            ],
+            "version": "==12.2.140"
+        },
+        "nvidia-cudnn-cu12": {
+            "hashes": [
+                "sha256:9f882d5b11753c566fd32427839089eb4f8ba7a58c28446ad359e32c40229723",
+                "sha256:e64a6be111aa3e9af4376ea84851730f9e745f560818f6961edbdbfbcc14d62f"
+            ],
+            "version": "==8.9.4.25"
+        },
+        "nvidia-cufft-cu12": {
+            "hashes": [
+                "sha256:72e961e578f9be9e316ccb4db8652c421dd0b57442624faa71061d452f449a67",
+                "sha256:9e357c00a9504e8e27d1f9b95b769a6e9a5b96e0e031044d93d80ce69a43ee9b"
+            ],
+            "version": "==11.0.8.103"
+        },
+        "nvidia-curand-cu12": {
+            "hashes": [
+                "sha256:7b6bad6817b5df2a6f5ec221206fb895d9195fdd7d2443f3e86554108c141a0a",
+                "sha256:c9bc6e70080a68f9210d0ba33f7386cd63930fc06c5a57ffcf43ff34bbc3eae8"
+            ],
+            "version": "==10.3.3.141"
+        },
+        "nvidia-cusolver-cu12": {
+            "hashes": [
+                "sha256:415c31ff308791be04f33c527abf329a3c4da1091a11166e693f52c2c8a8bf2d",
+                "sha256:5a85c4653ce34339a5688137f494a0f903e0f0532418550998167f00844161da"
+            ],
+            "version": "==11.5.2.141"
+        },
+        "nvidia-cusparse-cu12": {
+            "hashes": [
+                "sha256:4e13d6a51d2303dcb2a023ba09546811161f0334fc64e13689397bbd3b1eb126",
+                "sha256:684057a4c512d6d0a301a83092fddb32924eb2855c265aa2de3e05a033da51c2"
+            ],
+            "version": "==12.1.2.141"
+        },
+        "nvidia-nccl-cu12": {
+            "hashes": [
+                "sha256:84695a4248138fb2ca12f5fd3defe986e790e71ccdaad51b2ca34ca4e83ef421"
+            ],
+            "version": "==2.16.5"
+        },
+        "nvidia-nvjitlink-cu12": {
+            "hashes": [
+                "sha256:92f4c4e738a0385a0ff95587e65677c6a1aab325308d7b322fa18309ee32d2c0",
+                "sha256:95635cafbf9f96c38bea5200ab145a2e6aefbb5405e0b04c1e4ba54df2d84ec9"
+            ],
+            "version": "==12.2.140"
+        },
         "oauthlib": {
             "hashes": [
                 "sha256:8139f29aac13e25d502680e9e19963e83f16838d48a0d71c287fe40e7067fbca",
@@ -936,12 +1019,14 @@
             "version": "==0.7.2"
         },
         "tensorflow": {
+            "extras": [
+                "and-cuda"
+            ],
             "hashes": [
                 "sha256:8716acd8eb2950db126d74a419ac1ed870558ba34efc7d8e506165ad5896b261",
                 "sha256:c2dc9b6a519a9caad80430220c17f604e9ae76f3b5007c07cc8a5321e9f9cad0",
                 "sha256:d4b3926a3759e08a1e818f01104c25e6952da6fb1d7a77c75d9f1d8407f72593"
             ],
-            "index": "pypi",
             "markers": "python_version >= '3.9'",
             "version": "==2.15.0.post1"
         },
