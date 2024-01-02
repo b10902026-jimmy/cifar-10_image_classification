@@ -1,5 +1,7 @@
 from keras.models import Sequential
-from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+from tensorflow.python.compiler.tensorrt import trt_convert as trt
+from keras.models import load_model
 
 def create_model():
     model = Sequential([
@@ -13,3 +15,18 @@ def create_model():
         Dense(10, activation='softmax')
     ])
     return model
+
+def save_model(model, path):
+    model.save(path)
+
+def convert_model_to_trt(input_saved_model_dir, output_saved_model_dir):
+    conversion_params = trt.TrtConversionParams(precision_mode=trt.TrtPrecisionMode.FP16)
+    converter = trt.TrtGraphConverterV2(input_saved_model_dir=input_saved_model_dir, conversion_params=conversion_params)
+
+    converter.convert()
+    converter.save(output_saved_model_dir)
+
+def load_trt_model(path):
+    return load_model(path)
+
+
