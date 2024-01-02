@@ -9,6 +9,12 @@ __pycache__/
 # vscode develope
 .vscode/
 
+# log for tranning
+logs/
+
+# saved_model
+saved_model/
+
 # Distribution / packaging
 .Python
 build/
