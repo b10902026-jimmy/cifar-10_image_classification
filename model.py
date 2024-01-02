@@ -1,7 +1,7 @@
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from tensorflow.python.compiler.tensorrt import trt_convert as trt
-from keras.models import load_model
+
 
 def create_model():
     model = Sequential([

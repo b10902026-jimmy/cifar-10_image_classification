@@ -1,5 +1,5 @@
 from data_preprocess import load_and_preprocess_data
-from model import create_model, save_model, convert_model_to_trt, load_trt_model
+from model import create_model, save_model
 from augmentation import create_augmentation
 from visualization import plot_sample_images, plot_misclassified_images, plot_training_history
 from keras.callbacks import ModelCheckpoint, EarlyStopping
@@ -12,8 +12,10 @@ def main():
     # Load and preprocess data
     x_train, y_train, x_test, y_test = load_and_preprocess_data()
 
+    # 定義 CIFAR-10 數據集的類別名稱
+    class_names = ["airplane", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"]
     # Visualize training data 
-    plot_sample_images(x_train, y_train)
+    plot_sample_images(x_train, y_train, class_names)
 
     # Create and compile the model
     model = create_model()
@@ -38,6 +40,10 @@ def main():
                     validation_data=(x_test, y_test), 
                     callbacks=[checkpoint, early_stop, tensorboard])
     
+    # Preserve the model
+    save_model(model, 'saved_model/my_model')
+
+    # Use the optimized model for inference 
     predictions = model.predict(x_test, batch_size=64)
 
     # Convert prediction results into category labels
