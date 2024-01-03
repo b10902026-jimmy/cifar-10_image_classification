@@ -12,9 +12,6 @@ __pycache__/
 # log for tranning
 logs/
 
-# saved_model
-saved_model/
-
 # Distribution / packaging
 .Python
 build/
